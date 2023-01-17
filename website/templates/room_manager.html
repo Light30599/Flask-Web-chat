@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content%}
+<div class="mt-5 d-grid gap-2 d-md-block" style="margin-bottom: 250px;">
+    <a href="/loading?url=add_room" ><button type="button" class="btn btn-primary btn-lg btn-block mt-5">add a room</button></a>
+    
+    <!-- Button trigger modal -->
+   <button type="button" class="btn btn-secondary btn-lg btn-block mt-2" data-toggle="modal" data-target="#exampleModalLong">join room</button>
+    
+   
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Join Room</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form action="/join_room" method="post">
+        
+        <div class="modal-body">
+            
+                <div class="form-group">
+                  <label for="exampleInputcode">Room code:</label>
+                  <input type="text" class="form-control" id="exampleInputcode" name="code" aria-describedby="codeHelp" placeholder="Enter code">
+                  <small id="codeHelp" class="form-text text-muted">We'll never share your room with anyone else.</small>
+                </div>
+                
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Join now</button>
+        </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+    

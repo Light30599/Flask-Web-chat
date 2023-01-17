@@ -1,0 +1,60 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+
+<div class="header">
+
+  <h1 align="center">Chat Room</h1>
+</div>
+<style>
+/* Header/Logo Title */
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+</style>
+
+
+
+<ul class="list-group list-group-flush mt-5" id="notes">
+  {#
+    {% for note in user.notes %}
+  <li class="list-group-item">
+    {{ note.data }}
+    <button type="button" class="close" onClick="deleteNote({{ note.id }})">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </li>
+  {% endfor %}
+  #}
+  {% for note in notes %}
+ 
+
+  <div class="chat-message-left pb-4">
+   
+    <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
+      <button type="button" class="close" onClick="deleteNote({{ note.id }})">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="font-weight-bold mb-1">{{ note.user_id }}</div>
+      {{ note.data }}.
+    </div>
+    <div class="text-muted small text-nowrap mt-2">{{ note.date }}</div>
+
+  </div>
+
+{% endfor %}
+</ul>
+<form method="POST">
+  <textarea name="note" id="note" class="form-control" placeholder="Send your message ..."></textarea>
+  <br />
+  <div align="center">
+    <button type="submit" class="btn btn-outline-info">Add Note</button>
+  </div>
+</form>
+
+
+
+{% endblock %}

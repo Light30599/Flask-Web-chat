@@ -1,0 +1,119 @@
+.main-card{
+    background: rgb(239,238,238);
+    border:1px solid rgba(255,255,255,0.20);
+    box-shadow:12px 12px 16px 0 rgba(0,0,0,0.25),
+              -8px -8px 12px 0 rgba(255,255,255,0.3);
+    border-radius:10px;
+    width: 100%;
+    position:relative;
+    border:none;
+}
+.card{
+    width:80% !important;
+    margin:auto;
+    background: rgb(239,238,238);
+    box-shadow:12px 12px 16px 0 rgba(0,0,0,0.25),
+    -8px -8px 12px 0 rgba(255,255,255,0.3);
+    border:none;
+}
+.card::before{
+    content:'';
+    position: absolute;
+    top:-2px;
+    width:0;
+    height:0;
+    background: transparent;
+    border-top:5px solid transparent;
+}
+.card:hover::before{
+    animation:animate 3s linear forwards;
+}
+@keyframes animate{
+    0%{
+        width:0;
+        height:0;
+        border-top-color:rgb(255,255,255);
+    }
+    50%{
+        width:100%;
+        height:0;
+        border-top-color:rgb(255,255,255);
+    }
+    100%{
+        width:100%;
+        height:100%;
+        border-top-color:rgb(255,255,255);
+    }
+}
+.layer{
+    position:absolute;
+    top:0;
+    z-index:0;
+    width:100%;
+    background: linear-gradient(to right, #f6a425,#fdda1b);
+    height:150px;
+    border-radius:20px 20px 75px 75px;
+}
+.layer2{
+    position:absolute;
+    top:0;
+    z-index:0;
+    width:100%;
+    background: linear-gradient(to right, #43b645,#a8e82c);
+    height:150px;
+    border-radius:20px 20px 75px 75px;
+}
+.layer3{
+    position:absolute;
+    top:0;
+    z-index:0;
+    width:100%;
+    background: linear-gradient(to right, #fe3180,#fc5da3);
+    height:150px;
+    border-radius:20px 20px 75px 75px;
+}
+.round,.round1,.round2{
+position:absolute;
+top:-29px;
+left:-31px;
+z-index:0;
+width:60px;
+margin:0% 50%;
+background: linear-gradient(to right, #f6a425,#fdda1b);
+height:60px;
+border-radius:50%;
+text-align: center;
+border:5px solid #fff;
+box-shadow:12px 12px 16px 0 rgba(0,0,0,0.25),
+    -8px -8px 12px 0 rgba(255,255,255,0.3);
+}
+.card-text{
+    text-align: justify;
+    font-size:14px;
+}
+.p{
+    margin-top:5px;
+    font-size:25px;
+    color:#fff;
+    font-weight:bold;
+}
+.round1{
+    background: linear-gradient(to right, #43b645,#a8e82c);
+}
+.round2{
+    background: linear-gradient(to right, #fe3180,#fc5da3); 
+}
+.svg-icon{
+    width:39px;
+    display:flex;
+    margin:auto;
+}
+.red{
+    color:#f6a425
+}
+.green{
+    color:#43b645;
+}
+.pink{
+    color:#fe3180;
+}

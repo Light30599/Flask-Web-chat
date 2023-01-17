@@ -1,0 +1,1 @@
+#I'm leaving this function to help me manage replay and request ldap application 
